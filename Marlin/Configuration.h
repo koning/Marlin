@@ -301,9 +301,9 @@
   //#define  DEFAULT_Kd 440
   
   //Anet A8 - Koning
-  #define  DEFAULT_Kp 32.28
-  #define  DEFAULT_Ki 3.55
-  #define  DEFAULT_Kd 73.38
+  #define  DEFAULT_Kp 26.73
+  #define  DEFAULT_Ki 1.49
+  #define  DEFAULT_Kd 119.55
 
 #endif // PIDTEMP
 
@@ -683,28 +683,28 @@
   #define AUTO_BED_LEVELING_GRID
 
   #if ENABLED(AUTO_BED_LEVELING_GRID)
-
-    #define LEFT_PROBE_BED_POSITION 15
-    #define RIGHT_PROBE_BED_POSITION 170
-    #define FRONT_PROBE_BED_POSITION 20
-    #define BACK_PROBE_BED_POSITION 170
+  
+    #define LEFT_PROBE_BED_POSITION   15
+    #define RIGHT_PROBE_BED_POSITION  190
+    #define BACK_PROBE_BED_POSITION   170
+    #define FRONT_PROBE_BED_POSITION  15
 
     #define MIN_PROBE_EDGE 10 // The Z probe minimum square sides can be no smaller than this.
 
     // Set the number of grid points per dimension.
     // You probably don't need more than 3 (squared=9).
-    #define AUTO_BED_LEVELING_GRID_POINTS 2
+    #define AUTO_BED_LEVELING_GRID_POINTS 3
 
   #else  // !AUTO_BED_LEVELING_GRID
 
     // Arbitrary points to probe.
     // A simple cross-product is used to estimate the plane of the bed.
-    #define ABL_PROBE_PT_1_X 15
-    #define ABL_PROBE_PT_1_Y 180
-    #define ABL_PROBE_PT_2_X 15
-    #define ABL_PROBE_PT_2_Y 20
-    #define ABL_PROBE_PT_3_X 170
-    #define ABL_PROBE_PT_3_Y 20
+    #define ABL_PROBE_PT_1_X       20//15
+    #define ABL_PROBE_PT_1_Y      160//180
+    #define ABL_PROBE_PT_2_X      20//15
+    #define ABL_PROBE_PT_2_Y      10//20
+    #define ABL_PROBE_PT_3_X      180//170
+    #define ABL_PROBE_PT_3_Y      10//20
 
   #endif // !AUTO_BED_LEVELING_GRID
 
@@ -736,7 +736,7 @@
 // - If stepper drivers time out, it will need X and Y homing again before Z homing.
 // - Move the Z probe (or nozzle) to a defined XY point before Z Homing when homing all axes (G28).
 // - Prevent Z homing when the Z probe is outside bed area.
-//#define Z_SAFE_HOMING
+#define Z_SAFE_HOMING
 
 #if ENABLED(Z_SAFE_HOMING)
   #define Z_SAFE_HOMING_X_POINT ((X_MIN_POS + X_MAX_POS) / 2)    // X point for Z homing when homing all axis (G28).
@@ -744,8 +744,8 @@
 #endif
 
 // Homing speeds (mm/m)
-#define HOMING_FEEDRATE_XY (150*60)
-#define HOMING_FEEDRATE_Z  (4*60)
+#define HOMING_FEEDRATE_XY (100*60)
+#define HOMING_FEEDRATE_Z  (6*60)
 
 //
 // MOVEMENT SETTINGS
@@ -754,9 +754,9 @@
 
 // default settings
 
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 100,  100, 400,   90}  // default steps per unit for Ultimaker
-#define DEFAULT_MAX_FEEDRATE          { 400,  400,   8,   50}    // (mm/sec)
-#define DEFAULT_MAX_ACCELERATION      {3000, 3000, 100, 5000}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for Skeinforge 40+, for older versions raise them a lot.
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 100,  100,  400,   90}  // default steps per unit for Ultimaker
+#define DEFAULT_MAX_FEEDRATE          { 400,  400,    8,   50}    // (mm/sec)
+#define DEFAULT_MAX_ACCELERATION      {3000, 3000, 1000, 5000}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for Skeinforge 40+, for older versions raise them a lot.
 
 #define DEFAULT_ACCELERATION          1000    // X, Y, Z and E acceleration in mm/s^2 for printing moves
 #define DEFAULT_RETRACT_ACCELERATION  3000    // E acceleration in mm/s^2 for retracts
@@ -965,7 +965,7 @@
 //
 // :['JAPANESE','WESTERN','CYRILLIC']
 //
-#define DISPLAY_CHARSET_HD44780 WESTERN
+#define DISPLAY_CHARSET_HD44780 JAPANESE
 
 //
 // LCD TYPE
