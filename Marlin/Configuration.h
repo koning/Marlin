@@ -754,9 +754,9 @@
 
 // default settings
 
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 100,  100, 400,   90}  // default steps per unit for Ultimaker
-#define DEFAULT_MAX_FEEDRATE          { 400,  400,   8,   50}    // (mm/sec)
-#define DEFAULT_MAX_ACCELERATION      {3000, 3000, 100, 5000}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for Skeinforge 40+, for older versions raise them a lot.
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 100,  100, 400,    90}  // default steps per unit for Ultimaker
+#define DEFAULT_MAX_FEEDRATE          { 400,  400,   8,    50}    // (mm/sec)
+#define DEFAULT_MAX_ACCELERATION      {3000, 3000, 1000, 5000}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for Skeinforge 40+, for older versions raise them a lot.
 
 #define DEFAULT_ACCELERATION          1000    // X, Y, Z and E acceleration in mm/s^2 for printing moves
 #define DEFAULT_RETRACT_ACCELERATION  3000    // E acceleration in mm/s^2 for retracts
@@ -965,7 +965,7 @@
 //
 // :['JAPANESE','WESTERN','CYRILLIC']
 //
-#define DISPLAY_CHARSET_HD44780 WESTERN
+#define DISPLAY_CHARSET_HD44780 JAPANESE
 
 //
 // LCD TYPE
@@ -1162,8 +1162,10 @@
 // REPRAPWORLD_KEYPAD_MOVE_STEP sets how much should the robot move when a key
 // is pressed, a value of 10.0 means 10mm per click.
 //
-//#define REPRAPWORLD_KEYPAD
-//#define REPRAPWORLD_KEYPAD_MOVE_STEP 5.0
+#define REPRAPWORLD_KEYPAD
+#define REPRAPWORLD_KEYPAD_MOVE_STEP 10.0
+#define ADC_KEYPAD
+#define ADC_KEYPAD_DEBUG
 
 //
 // RigidBot Panel V1.0
